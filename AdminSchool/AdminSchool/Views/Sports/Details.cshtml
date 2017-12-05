@@ -1,0 +1,58 @@
+﻿@model AdminSchool.Models.Sport
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sport</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Football)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Football)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Basketball)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Basketball)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tennis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tennis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hoky)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hoky)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ragkpi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ragkpi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

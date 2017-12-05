@@ -1,0 +1,58 @@
+﻿@model AdminSchool.Models.StudentData
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StudentData</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SchoolClass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchoolClass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FavouritTopic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FavouritTopic)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button class="btn btn-default">@Html.ActionLink("Back to List", "Index")</button>
+    <button class="btn btn-default">@Html.ActionLink("Edit", "Edit", new { id = Model.Id })</button>
+</p>
