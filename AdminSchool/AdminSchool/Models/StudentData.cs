@@ -15,8 +15,7 @@ namespace AdminSchool.Models
         [Required(ErrorMessage ="Please insert again")]
         [StringLength(50)]
         public string LastName { get; set; }
-        [Required(ErrorMessage ="Age must be a number between 1 and 18")]
-        [StringLength(2)]
+        [Required]
         public int Age { get; set; }
         [Required(ErrorMessage ="Please insert again")]
         public SchoolClass SchoolClass { get; set; }
