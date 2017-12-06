@@ -9,15 +9,20 @@ namespace AdminSchool.Models
     public class Sport
     {
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Please insert again")]
+        [StringLength(50)]
         public string Football { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Please insert again")]
+        [StringLength(50)]
         public string Basketball { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Please insert again")]
+        [StringLength(50)]
         public string Tennis { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Please insert again")]
+        [StringLength(50)]
         public string Hoky { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Please insert again")]
+        [StringLength(50)]
         public string Ragkpi { get; set; }
     }
 }

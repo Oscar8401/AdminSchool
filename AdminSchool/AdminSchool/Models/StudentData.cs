@@ -9,15 +9,18 @@ namespace AdminSchool.Models
     public class StudentData
     {
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Please insert your first name again")]
+        [StringLength(50)]
         public string FirstName { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Please insert again")]
+        [StringLength(50)]
         public string LastName { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Age must be a number between 1 and 18")]
+        [StringLength(2)]
         public int Age { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Please insert again")]
         public SchoolClass SchoolClass { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Please insert again")]
         public FavouritTopic FavouritTopic { get; set; }
     }
 
