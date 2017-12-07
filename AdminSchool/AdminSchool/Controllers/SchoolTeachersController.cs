@@ -20,6 +20,11 @@ namespace AdminSchool.Controllers
         // GET: SchoolTeachers
         public ActionResult Index(int? page, string searchBy, string search)
         {
+            //if (string.IsNullOrEmpty(search))
+            //{
+            //    return (db.Schoolteachers.ToList().ToPagedList(page ?? 1, 2));
+            //}
+
             if (searchBy == "FirstName")
             {
                 return View(db.Schoolteachers.Where(x => x.FirstName == search ||  search == null).ToList().ToPagedList(page ?? 1, 2));
@@ -34,6 +39,7 @@ namespace AdminSchool.Controllers
                 return View(db.Schoolteachers.Where(x => x.FirstName.StartsWith(search) || search == null).ToList().ToPagedList(page ?? 1, 2));
 
             }
+            //return (db.Schoolteachers.ToList().ToPagedList( page ?? 1, 2));
 
         }
 
