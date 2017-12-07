@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AdminSchool.Models.SchoolTeacher>
+﻿@model IPagedList<SchoolTeacher>
 
 @{
     ViewBag.Title = "Index";
@@ -18,19 +18,19 @@
 <table class="table table-hover table-striped table-responsive">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Age)
+            @Html.DisplayNameFor(model => model.First().Age)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Salary)
+            @Html.DisplayNameFor(model => model.First().Salary)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FirstName)
+            @Html.DisplayNameFor(model => model.First().FirstName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LastName)
+            @Html.DisplayNameFor(model => model.First().LastName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Position)
+            @Html.DisplayNameFor(model => model.First().Position)
         </th>
         <th></th>
     </tr>
@@ -61,3 +61,6 @@
 }
 
 </table>
+<div class="row">
+    @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page}))
+</div>
