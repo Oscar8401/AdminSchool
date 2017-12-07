@@ -8,7 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 using AdminSchool.DataAccesslayer;
 using AdminSchool.Models;
-
+using PagedList;
+using PagedList.Mvc;
+ 
 namespace AdminSchool.Controllers
 {
     public class StudentDatasController : Controller
@@ -16,9 +18,9 @@ namespace AdminSchool.Controllers
         private SutdentRegisterContext db = new SutdentRegisterContext();
 
         // GET: StudentDatas
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View(db.StudentDatas.ToList());
+            return View(db.StudentDatas.ToList().ToPagedList(page ?? 1,2));
         }
 
         // GET: StudentDatas/Details/5

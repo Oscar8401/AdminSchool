@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AdminSchool.Models.StudentData>
+﻿@model IPagedList<StudentData>
 
 @{
     ViewBag.Title = "Index";
@@ -6,30 +6,31 @@
 
 <h2>Index</h2>
 
-<p>
-    <button class="btn btn-default">@Html.ActionLink("Create New", "Create")</button> 
-</p>
-<div class="form-group pull-right">
-    <form>
-        <input type="search" placeholder="What are you looking for?" class="form-control"/>
-    </form>
+<div class="row">
+    <button class="btn btn-default">@Html.ActionLink("Create New", "Create")</button>
+    <div class="form-group pull-right">
+        <form>
+            <input type="search" placeholder="What are you looking for?" class="form-control" />
+        </form>
+    </div>
 </div>
+
 <table class="table table-responsive table-striped table-hover">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.FirstName)
+            @Html.DisplayNameFor(model => model.First().FirstName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LastName)
+            @Html.DisplayNameFor(model => model.First().LastName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Age)
+            @Html.DisplayNameFor(model => model.First().Age)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SchoolClass)
+            @Html.DisplayNameFor(model => model.First().SchoolClass)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FavouritTopic)
+            @Html.DisplayNameFor(model => model.First().FavouritTopic)
         </th>
         <th></th>
     </tr>
@@ -60,3 +61,6 @@
 }
 
 </table>
+<div class="row">
+    @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page}))
+</div>
