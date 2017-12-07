@@ -165,6 +165,10 @@
     <Compile Include="Migrations\201712062051289_initi.Designer.cs">
       <DependentUpon>201712062051289_initi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712072207523_initi4.cs" />
+    <Compile Include="Migrations\201712072207523_initi4.Designer.cs">
+      <DependentUpon>201712072207523_initi4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SchoolTeacher.cs" />
     <Compile Include="Models\Sport.cs" />
@@ -289,6 +293,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712062051289_initi.resx">
       <DependentUpon>201712062051289_initi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712072207523_initi4.resx">
+      <DependentUpon>201712072207523_initi4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

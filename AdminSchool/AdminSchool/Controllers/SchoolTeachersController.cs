@@ -18,9 +18,23 @@ namespace AdminSchool.Controllers
         private SutdentRegisterContext db = new SutdentRegisterContext();
 
         // GET: SchoolTeachers
-        public ActionResult Index(int? page)
+        public ActionResult Index(int? page, string searchBy, string search)
         {
-            return View(db.Schoolteachers.ToList().ToPagedList(page ?? 1,2));
+            if (searchBy == "FirstName")
+            {
+                return View(db.Schoolteachers.Where(x => x.FirstName == search ||  search == null).ToList().ToPagedList(page ?? 1, 2));
+            }
+            else if(searchBy == "LastName")
+            {
+                return View(db.Schoolteachers.Where(x => x.LastName == search || search == null).ToList().ToPagedList(page ?? 1, 2));
+
+            }
+            else
+            {
+                return View(db.Schoolteachers.Where(x => x.FirstName.StartsWith(search) || search == null).ToList().ToPagedList(page ?? 1, 2));
+
+            }
+
         }
 
         // GET: SchoolTeachers/Details/5
