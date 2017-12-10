@@ -41,6 +41,7 @@ namespace AdminSchool.Controllers
             }
             //return (db.Schoolteachers.ToList().ToPagedList( page ?? 1, 2));
 
+
         }
 
         // GET: SchoolTeachers/Details/5
