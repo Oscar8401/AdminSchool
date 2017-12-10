@@ -10,16 +10,19 @@
     <p>
         <button class="btn btn-default">@Html.ActionLink("Create New", "Create")</button>
     </p>
-    <p>
-        @using (Html.BeginForm("Index", "Schoolteacher",FormMethod.Get)) { 
-        <b>Search by:</b>@Html.RadioButton("Search By", "Age",true) <text> Age</text>
-                         @Html.RadioButton("Search By", "Salary") <text> Salary</text>
-                         @Html.RadioButton("Search By", "FirstName") <text> FirstName </text>
-                        @Html.RadioButton("Search By", "LastName") <text> LastName</text>
-                        @Html.RadioButton("Search By", "Position") <text> Position</text><br />
-        @Html.TextBox("Search")<input type="submit" value="Search"/>
-        }
-    </p>
+    <div class="jumbotron">
+        <p>
+            @using (Html.BeginForm("Index", "SchoolTeachers", FormMethod.Get))
+            {
+                <b>Search by:</b>@Html.RadioButton("SearchBy", "Age", true) <text> Age</text>
+                @Html.RadioButton("SearchBy", "Salary") <text> Salary</text>
+                @Html.RadioButton("SearchBy", "FirstName") <text> FirstName </text>
+                @Html.RadioButton("SearchBy", "LastName") <text> LastName</text>
+                @Html.RadioButton("SearchBy", "Position") <text> Position</text><br />
+                        @Html.TextBox("search", null, new { @class = "form-control", placeholder = "Search for..." })<input type="submit" value="Search" class="btn btn-info"/>
+            }
+        </p>
+    </div>
 </div>
 
 <table class="table table-hover table-striped table-responsive">

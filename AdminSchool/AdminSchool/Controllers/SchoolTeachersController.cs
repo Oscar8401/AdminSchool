@@ -34,6 +34,21 @@ namespace AdminSchool.Controllers
                 return View(db.Schoolteachers.Where(x => x.LastName == search || search == null).ToList().ToPagedList(page ?? 1, 2));
 
             }
+            else if (searchBy == "Age")
+            {
+                return View(db.Schoolteachers.Where(x => x.Age.ToString() == search || search == null).ToList().ToPagedList(page ?? 1, 2));
+
+            }
+            else if (searchBy == "Slary")
+            {
+                return View(db.Schoolteachers.Where(x => x.Salary.ToString() == search || search == null).ToList().ToPagedList(page ?? 1, 2));
+
+            }
+            else if(searchBy == "Position")
+            {
+                return View(db.Schoolteachers.Where(x => x.Position == search || search == null).ToList().ToPagedList(page ?? 1, 2));
+
+            }
             else
             {
                 return View(db.Schoolteachers.Where(x => x.FirstName.StartsWith(search) || search == null).ToList().ToPagedList(page ?? 1, 2));
