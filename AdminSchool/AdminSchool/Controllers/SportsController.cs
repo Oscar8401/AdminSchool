@@ -18,9 +18,29 @@ namespace AdminSchool.Controllers
         private SutdentRegisterContext db = new SutdentRegisterContext();
 
         // GET: Sports
-        public ActionResult Index(int? page)
+        public ActionResult Index(int? page, string searchBy, string search)
         {
-            return View(db.Sports.ToList().ToPagedList(page ?? 1,2));
+            if (searchBy == "Football")
+            {
+                return View(db.Sports.Where(x => x.Football == search || search == null).ToList().ToPagedList(page ?? 1, 2));
+            }
+            else if (searchBy == "Basketball")
+            {
+                return View(db.Sports.Where(x => x.Basketball == search ||search == null).ToList().ToPagedList(page ?? 1, 2));
+            }
+            else if (searchBy == "Ragkpi")
+            {
+                return View(db.Sports.Where(x => x.Ragkpi == search || search == null).ToList().ToPagedList(page ?? 1, 2));
+            }
+            else if (searchBy == "Hoky")
+            {
+                return View(db.Sports.Where(x => x.Hoky == search || search == null).ToList().ToPagedList(page ?? 1, 2));
+            }
+            else
+            {
+                return View(db.Sports.ToList().ToPagedList(page ?? 1, 2));
+            }
+            //return View(db.Sports.ToList().ToPagedList(page ?? 1,2));
         }
 
         // GET: Sports/Details/5
