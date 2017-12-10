@@ -38,7 +38,7 @@ namespace AdminSchool.Controllers
             }
             else
             {
-                return View(db.Sports.ToList().ToPagedList(page ?? 1, 2));
+                return View(db.Sports.Where(x => x.Football.StartsWith(search) || search == null).ToList().ToPagedList(page ?? 1, 2));
             }
             //return View(db.Sports.ToList().ToPagedList(page ?? 1,2));
         }
