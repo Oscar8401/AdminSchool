@@ -81,5 +81,5 @@
 </table>
 <div class="row">
     @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"]}),
-    new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true})
+    new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, DisplayItemSliceAndTotal = true})
 </div>
